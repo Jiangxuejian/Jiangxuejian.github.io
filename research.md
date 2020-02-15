@@ -4,11 +4,11 @@
 
 my ORCID record: [http://orcid.org/0000-0002-8899-4673](http://orcid.org/0000-0002-8899-4673) 
 
-click to view [My publications on ADS](http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&qform=AST&arxiv_sel=astro-ph&sim_query=YES&ned_query=YES&adsobj_query=YES&aut_xct=YES&aut_logic=OR&obj_logic=OR&author=jiang%2C+xue-jian jiang%2C+xuejian&object=&start_mon=&start_year=&end_mon=&end_year=&ttl_logic=OR&title=&txt_logic=OR&text=&nr_to_return=200&start_nr=1&jou_pick=ALL&ref_stems=&data_and=ALL&group_and=ALL&start_entry_day=&start_entry_mon=&start_entry_year=&end_entry_day=&end_entry_mon=&end_entry_year=&min_score=&sort=SCORE&data_type=SHORT&aut_syn=YES&ttl_syn=YES&txt_syn=YES&aut_wt=1.0&obj_wt=1.0&ttl_wt=0.3&txt_wt=3.0&aut_wgt=YES&obj_wgt=YES&ttl_wgt=YES&txt_wgt=YES&ttl_sco=YES&txt_sco=YES&version=1)
+click to view [My publications on ADS](https://ui.adsabs.harvard.edu/search/filter_database_fq_database=OR&filter_database_fq_database=database%3A%22astronomy%22&format=SHORT&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3A%22astronomy%22)&q=%3Dauthor%3A(%22jiang%2C%20xue-jian%22%20OR%20%22jiang%2C%20xuejian%22)&sort=score%20desc%2C%20bibcode%20desc&unprocessed_parameter=qform&unprocessed_parameter=adsobj_query&p_=0)
 
 ------
 
-**1. MALATANG **(MApping the dense moLecular gAs in the sTrongest stAr-formiNg Galaxies)
+- 1. MALATANG (MApping the dense moLecular gAs in the sTrongest stAr-formiNg Galaxies)
 
 
 
