@@ -8,5 +8,5 @@
 
   **Email: xjjiang.nju -at~ gmail.com**
 
-![xuejian-JCMT](http://sfig.pmo.ac.cn/xjjiang/images/xuejian-jcmt.jpg)
+![xuejian-JCMT](/images/xuejian-jcmt.jpg)
 
