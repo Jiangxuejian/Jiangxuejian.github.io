@@ -1,4 +1,4 @@
-### Research
+- ### Research
 
 
 
@@ -8,7 +8,7 @@ click to view [My publications on ADS](https://ui.adsabs.harvard.edu/search/filt
 
 ------
 
-##### MALATANG (MApping the dense moLecular gAs in the sTrongest stAr-formiNg Galaxies)
+- ##### MALATANG (MApping the dense moLecular gAs in the sTrongest stAr-formiNg Galaxies)
 
 
 
@@ -40,8 +40,8 @@ click to view [My publications on ADS](https://ui.adsabs.harvard.edu/search/filt
 
 
 
-##### CCH in the ISM (Astrochemistry)**
+- ##### CCH in the ISM (Astrochemistry)**
 
-- I am particularly interested in the new and open topic: Astrochemistr, because chemistry is a new way to understand the composition, properties of the interstellar medium, hence the secret of star formation.
+- I am particularly interested in the new and open topic: Astrochemistry, as chemistry is a new way to understand the composition, properties of the interstellar medium, hence the secret of star formation.
 
    
