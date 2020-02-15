@@ -12,13 +12,9 @@
 ![MALATANG-150x150](images/MALATANG-150x150.png)
 
 - The scientific goals of MALATANG
-
   Resolved dense gas star formation relations
-  
   especially at Intermediate scales/luminosities
-  
   diagnose the SF properties in different environments: nuclear vs. disk
-  
   obtain the radial distribution of dense gas and SF efficiency
 
 - I am actively working on one of the JCMT large program MALATANG, dealing with observerving preparation, data reduction, telecon orgnization and project Wiki maintanence:
