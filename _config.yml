@@ -109,8 +109,8 @@ analytics:
 author:
   name             : "Xue-Jian Jiang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Hilo"
+  bio              : "Just another astronomer."
+  location         : "Hilo, Hawaii"
   email            :
   links:
     - label: "Email"
@@ -133,7 +133,7 @@ author:
       # url: "https://instagram.com/"
 
 sidebar:
-  - title: "Title"
+  - title: "sidebar"
     image: http://placehold.it/350x250
     image_alt: "image"
     text: "Some text here."      
