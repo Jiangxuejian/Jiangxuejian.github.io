@@ -20,14 +20,15 @@
         <main class="row">
             <div class="col">
                 <h1>`Āweoweo Observing Database</h1>
+                <hr>
 
-                <p>Display <a href="https://www.eaobservatory.org/jcmt/instrumentation/heterodyne/namakanui/aweoweo-345ghz/">Aweoweo</a> observing record as a searchable, filterable, table. Combine SQL + Python + Crontab + JavaScript. <a
-                        href="https://github.com/Jiangxuejian/aweoweo_database">Full database
-                        on GitHub</a>.</p>
-                <p> Enter utdate (<b>yyyymmdd</b>) to show the data.  </p>
-
-            <script type="text/javascript">
-            </script>
+                <p1> This page provides daily automated SQL search results of <a href="https://www.eaobservatory.org/jcmt/instrumentation/heterodyne/namakanui/aweoweo-345ghz/">`Āweoweo</a> observations. 
+                </p1><br>
+                <p1> The data table is displayed as a searchable & filterable table. Combine SQL + Python + Crontab + JavaScript. <a href="https://github.com/Jiangxuejian/aweoweo_database">Full database
+                        on GitHub</a>.</p1><br>
+                <p> Data reduction only support EAO machines. </p>
+                                <hr>
+                <p1> > Enter utdate (<b>yyyymmdd</b>):  </p1>
             <input type="text" id="in"  style="width: 76px;"/>
             <!-- <input type="button" value="jump to date" onclick="goToPage();"/> -->
             <button type="button" id="myBtn" onclick="getInput_UpdatePage();">Go</button>
@@ -41,8 +42,8 @@
                 });
             </script>
             <p> </p>
-            <p1> Download: </p1>
-            <button type="button" class='glyphicon glyphicon-download' onclick="download('.tsv');"> CSV</button>
+            <p1> > <b> Download: </b></p1>
+            <button type="button" class='glyphicon glyphicon-download' onclick="download('.tsv');"> Table </button>
             <button type="button" class='glyphicon glyphicon-download' onclick="download('.txt');"> File list</button>
             <button type="button" class='glyphicon glyphicon-download' onclick="download('script');"> Data reduction script</button>
             <p> </p>            
