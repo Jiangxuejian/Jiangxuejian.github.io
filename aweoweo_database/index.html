@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aweoweo observing database</title>
+    <meta name="author" content="Derek Eder">
+    <meta content="Display Aweoweo observing record as a searchable, filterable, table">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <main class="row">
+            <div class="col">
+                <h1>`Āweoweo Observing Database</h1>
+
+                <p>Display <a href="https://www.eaobservatory.org/jcmt/instrumentation/heterodyne/namakanui/aweoweo-345ghz/">Aweoweo</a> observing record as a searchable, filterable, table. Combine SQL + Python + Crontab + JavaScript. <a
+                        href="https://github.com/Jiangxuejian/aweoweo_database">Full database
+                        on GitHub</a>.</p>
+                <p> Enter utdate (<b>yyyymmdd</b>) to show the data.  </p>
+
+            <script type="text/javascript">
+            </script>
+            <input type="text" id="in"  style="width: 76px;"/>
+            <!-- <input type="button" value="jump to date" onclick="goToPage();"/> -->
+            <button type="button" id="myBtn" onclick="getInput_UpdatePage();">Go</button>
+            <script type="text/javascript">
+                var input = document.getElementById("in");
+                input.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                         event.preventDefault();
+                       document.getElementById("myBtn").click();
+                     }
+                });
+            </script>
+            <p> </p>
+            <p1> Download: </p1>
+            <button type="button" class='glyphicon glyphicon-download' onclick="download('.tsv');"> CSV</button>
+            <button type="button" class='glyphicon glyphicon-download' onclick="download('.txt');"> File list</button>
+            <button type="button" class='glyphicon glyphicon-download' onclick="download('script');"> Data reduction script</button>
+            <p> </p>            
+            <p> Showing records of date: <span id="input_date"></span></p>
+
+                <div id="table-container"></div>
+            </div>
+        </main>
+        <footer class="row">
+            <div class="col">
+                <hr>
+                <p class="text-right">Based on <a href="https://github.com/derekeder/csv-to-html-table">CSV to HTML Table</a> by
+                    <a href="http://derekeder.com">Derek
+                        Eder</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/csv_to_html_table.js"></script>
+
+    <script>
+        function download(url) {
+            var inputVal = document.getElementById("in").value;
+            var month = inputVal.substr(0,6);
+            const a = document.createElement('a')
+            if (url === '.tsv') {
+                a.href = "https://raw.githubusercontent.com/Jiangxuejian/aweoweo_database/master/"+month+"/aweoweo_sql_"+inputVal+url
+            }
+            if (url === '.txt') {
+                a.href = "https://raw.githubusercontent.com/Jiangxuejian/aweoweo_database/master/"+month+"/aweoweo_file_"+inputVal+url
+            }
+            if (url === 'script') {
+                a.href = "https://raw.githubusercontent.com/Jiangxuejian/JCMT_toolkits/main/acsis_pol_sep.sh"
+            }
+            a.download = url.split('/').pop()
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        }
+
+        function getInput_UpdatePage(){
+                // Selecting the input element and get its value 
+                var inputVal = document.getElementById("in").value;
+                var month = inputVal.substr(0,6);
+                // Displaying the value
+                // alert(inputVal);
+                document.getElementById("input_date").innerHTML = inputVal;
+
+                CsvToHtmlTable.init({
+                    csv_path: "https://raw.githubusercontent.com/Jiangxuejian/aweoweo_database/master/"+month+"/aweoweo_sql_"+inputVal+".tsv",
+                    element: "table-container",
+                    allow_download: true,
+                    csv_options: {
+                        separator: "\t",
+                        delimiter: '"'
+                    },
+                    datatables_options: {
+                        paging: false
+                    },
+                    // custom_formatting: [
+                        // [4, format_link]
+                    // ]
+                });
+        
+                }
+        function format_link(link) {
+            if (link)
+                return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+            else return "";
+        }
+
+    </script>
+
+</body>
+
+</html>
