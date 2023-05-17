@@ -1,65 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<style>
-		table {
-			border-collapse: collapse;
-			table-layout: fixed;
-			width: 50%;
-#			margin: auto;
-		}
-		td {
-			padding: -5;
-			width: 50%;
-			position: relative;
-			cursor: pointer;
-			border: none;
-		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
-		.overlay {
-			display: none;
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 50%;
-			background-color: rgba(0,0,0,0);
-			z-index: 999;
-		}
-		.overlay img {
-			max-width: 100%;
-			max-height: 100%;
-			margin: auto;
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}
-		.button-container {
-            position: absolute;
-            left: 75%;
-            top: 5%;
-            transform: translate(-50%, -50%);
-        }
-		.button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-	</style>
+<head> 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src = "script1.js"	></script>
 </head>
 <body>
     <div class="button-container">
@@ -69,102 +12,102 @@
         <button class="button">Collective Plots</button>
     </a>
 	</div>
-	<table>
+	<table id="myTable">
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_22_09.png" data-link="images/results/Fig_Collective/Collective_22_09.png"></td>
 <td><img src="images/grids/small_data_NH_22_10.png" data-link="images/results/Fig_Collective/Collective_22_10.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_21_08.png" data-link="images/results/Fig_Collective/Collective_21_08.png"></td>
 <td><img src="images/grids/small_data_NH_21_09.png" data-link="images/results/Fig_Collective/Collective_21_09.png"></td>
 <td><img src="images/grids/small_data_NH_21_10.png" data-link="images/results/Fig_Collective/Collective_21_10.png"></td>
 <td><img src="images/grids/small_data_NH_21_11.png" data-link="images/results/Fig_Collective/Collective_21_11.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_20_08.png" data-link="images/results/Fig_Collective/Collective_20_08.png"></td>
 <td><img src="images/grids/small_data_NH_20_09.png" data-link="images/results/Fig_Collective/Collective_20_09.png"></td>
 <td><img src="images/grids/small_data_NH_20_10.png" data-link="images/results/Fig_Collective/Collective_20_10.png"></td>
 <td><img src="images/grids/small_data_NH_20_11.png" data-link="images/results/Fig_Collective/Collective_20_11.png"></td>
 <td><img src="images/grids/small_data_NH_20_12.png" data-link="images/results/Fig_Collective/Collective_20_12.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_19_08.png" data-link="images/results/Fig_Collective/Collective_19_08.png"></td>
 <td><img src="images/grids/small_data_NH_19_09.png" data-link="images/results/Fig_Collective/Collective_19_09.png"></td>
 <td><img src="images/grids/small_data_NH_19_10.png" data-link="images/results/Fig_Collective/Collective_19_10.png"></td>
 <td><img src="images/grids/small_data_NH_19_11.png" data-link="images/results/Fig_Collective/Collective_19_11.png"></td>
 <td><img src="images/grids/small_data_NH_19_12.png" data-link="images/results/Fig_Collective/Collective_19_12.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_18_08.png" data-link="images/results/Fig_Collective/Collective_18_08.png"></td>
 <td><img src="images/grids/small_data_NH_18_09.png" data-link="images/results/Fig_Collective/Collective_18_09.png"></td>
 <td><img src="images/grids/small_data_NH_18_10.png" data-link="images/results/Fig_Collective/Collective_18_10.png"></td>
 <td><img src="images/grids/small_data_NH_18_11.png" data-link="images/results/Fig_Collective/Collective_18_11.png"></td>
 <td><img src="images/grids/small_data_NH_18_12.png" data-link="images/results/Fig_Collective/Collective_18_12.png"></td>
 <td><img src="images/grids/small_data_NH_18_13.png" data-link="images/results/Fig_Collective/Collective_18_13.png"></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_17_09.png" data-link="images/results/Fig_Collective/Collective_17_09.png"></td>
 <td><img src="images/grids/small_data_NH_17_10.png" data-link="images/results/Fig_Collective/Collective_17_10.png"></td>
 <td><img src="images/grids/small_data_NH_17_11.png" data-link="images/results/Fig_Collective/Collective_17_11.png"></td>
@@ -173,191 +116,191 @@
 <td><img src="images/grids/small_data_NH_17_14.png" data-link="images/results/Fig_Collective/Collective_17_14.png"></td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_16_09.png" data-link="images/results/Fig_Collective/Collective_16_09.png"></td>
 <td><img src="images/grids/small_data_NH_16_10.png" data-link="images/results/Fig_Collective/Collective_16_10.png"></td>
 <td><img src="images/grids/small_data_NH_16_11.png" data-link="images/results/Fig_Collective/Collective_16_11.png"></td>
 <td><img src="images/grids/small_data_NH_16_12.png" data-link="images/results/Fig_Collective/Collective_16_12.png"></td>
 <td><img src="images/grids/small_data_NH_16_13.png" data-link="images/results/Fig_Collective/Collective_16_13.png"></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_15_08.png" data-link="images/results/Fig_Collective/Collective_15_08.png"></td>
 <td><img src="images/grids/small_data_NH_15_09.png" data-link="images/results/Fig_Collective/Collective_15_09.png"></td>
 <td><img src="images/grids/small_data_NH_15_10.png" data-link="images/results/Fig_Collective/Collective_15_10.png"></td>
 <td><img src="images/grids/small_data_NH_15_11.png" data-link="images/results/Fig_Collective/Collective_15_11.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_14_08.png" data-link="images/results/Fig_Collective/Collective_14_08.png"></td>
 <td><img src="images/grids/small_data_NH_14_09.png" data-link="images/results/Fig_Collective/Collective_14_09.png"></td>
 <td><img src="images/grids/small_data_NH_14_10.png" data-link="images/results/Fig_Collective/Collective_14_10.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_13_06.png" data-link="images/results/Fig_Collective/Collective_13_06.png"></td>
 <td><img src="images/grids/small_data_NH_13_07.png" data-link="images/results/Fig_Collective/Collective_13_07.png"></td>
 <td><img src="images/grids/small_data_NH_13_08.png" data-link="images/results/Fig_Collective/Collective_13_08.png"></td>
 <td><img src="images/grids/small_data_NH_13_09.png" data-link="images/results/Fig_Collective/Collective_13_09.png"></td>
 <td><img src="images/grids/small_data_NH_13_10.png" data-link="images/results/Fig_Collective/Collective_13_10.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_12_06.png" data-link="images/results/Fig_Collective/Collective_12_06.png"></td>
 <td><img src="images/grids/small_data_NH_12_07.png" data-link="images/results/Fig_Collective/Collective_12_07.png"></td>
 <td><img src="images/grids/small_data_NH_12_08.png" data-link="images/results/Fig_Collective/Collective_12_08.png"></td>
 <td><img src="images/grids/small_data_NH_12_09.png" data-link="images/results/Fig_Collective/Collective_12_09.png"></td>
 <td><img src="images/grids/small_data_NH_12_10.png" data-link="images/results/Fig_Collective/Collective_12_10.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_11_05.png" data-link="images/results/Fig_Collective/Collective_11_05.png"></td>
 <td><img src="images/grids/small_data_NH_11_06.png" data-link="images/results/Fig_Collective/Collective_11_06.png"></td>
 <td><img src="images/grids/small_data_NH_11_07.png" data-link="images/results/Fig_Collective/Collective_11_07.png"></td>
 <td><img src="images/grids/small_data_NH_11_08.png" data-link="images/results/Fig_Collective/Collective_11_08.png"></td>
 <td><img src="images/grids/small_data_NH_11_09.png" data-link="images/results/Fig_Collective/Collective_11_09.png"></td>
 <td><img src="images/grids/small_data_NH_11_10.png" data-link="images/results/Fig_Collective/Collective_11_10.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_10_05.png" data-link="images/results/Fig_Collective/Collective_10_05.png"></td>
 <td><img src="images/grids/small_data_NH_10_06.png" data-link="images/results/Fig_Collective/Collective_10_06.png"></td>
 <td><img src="images/grids/small_data_NH_10_07.png" data-link="images/results/Fig_Collective/Collective_10_07.png"></td>
 <td><img src="images/grids/small_data_NH_10_08.png" data-link="images/results/Fig_Collective/Collective_10_08.png"></td>
 <td><img src="images/grids/small_data_NH_10_09.png" data-link="images/results/Fig_Collective/Collective_10_09.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_09_04.png" data-link="images/results/Fig_Collective/Collective_09_04.png"></td>
 <td><img src="images/grids/small_data_NH_09_05.png" data-link="images/results/Fig_Collective/Collective_09_05.png"></td>
 <td><img src="images/grids/small_data_NH_09_06.png" data-link="images/results/Fig_Collective/Collective_09_06.png"></td>
 <td><img src="images/grids/small_data_NH_09_07.png" data-link="images/results/Fig_Collective/Collective_09_07.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_08_03.png" data-link="images/results/Fig_Collective/Collective_08_03.png"></td>
 <td><img src="images/grids/small_data_NH_08_04.png" data-link="images/results/Fig_Collective/Collective_08_04.png"></td>
 <td><img src="images/grids/small_data_NH_08_05.png" data-link="images/results/Fig_Collective/Collective_08_05.png"></td>
 <td><img src="images/grids/small_data_NH_08_06.png" data-link="images/results/Fig_Collective/Collective_08_06.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_07_02.png" data-link="images/results/Fig_Collective/Collective_07_02.png"></td>
 <td><img src="images/grids/small_data_NH_07_03.png" data-link="images/results/Fig_Collective/Collective_07_03.png"></td>
 <td><img src="images/grids/small_data_NH_07_04.png" data-link="images/results/Fig_Collective/Collective_07_04.png"></td>
 <td><img src="images/grids/small_data_NH_07_05.png" data-link="images/results/Fig_Collective/Collective_07_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_06_01.png" data-link="images/results/Fig_Collective/Collective_06_01.png"></td>
 <td><img src="images/grids/small_data_NH_06_02.png" data-link="images/results/Fig_Collective/Collective_06_02.png"></td>
 <td><img src="images/grids/small_data_NH_06_03.png" data-link="images/results/Fig_Collective/Collective_06_03.png"></td>
 <td><img src="images/grids/small_data_NH_06_04.png" data-link="images/results/Fig_Collective/Collective_06_04.png"></td>
 <td><img src="images/grids/small_data_NH_06_05.png" data-link="images/results/Fig_Collective/Collective_06_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td><img src="images/grids/small_data_NH_05_00.png" data-link="images/results/Fig_Collective/Collective_05_00.png"></td>
@@ -366,32 +309,32 @@
 <td><img src="images/grids/small_data_NH_05_03.png" data-link="images/results/Fig_Collective/Collective_05_03.png"></td>
 <td><img src="images/grids/small_data_NH_05_04.png" data-link="images/results/Fig_Collective/Collective_05_04.png"></td>
 <td><img src="images/grids/small_data_NH_05_05.png" data-link="images/results/Fig_Collective/Collective_05_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_04_01.png" data-link="images/results/Fig_Collective/Collective_04_01.png"></td>
 <td><img src="images/grids/small_data_NH_04_02.png" data-link="images/results/Fig_Collective/Collective_04_02.png"></td>
 <td><img src="images/grids/small_data_NH_04_03.png" data-link="images/results/Fig_Collective/Collective_04_03.png"></td>
 <td><img src="images/grids/small_data_NH_04_04.png" data-link="images/results/Fig_Collective/Collective_04_04.png"></td>
 <td><img src="images/grids/small_data_NH_04_05.png" data-link="images/results/Fig_Collective/Collective_04_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td><img src="images/grids/small_data_NH_03_00.png" data-link="images/results/Fig_Collective/Collective_03_00.png"></td>
@@ -400,84 +343,71 @@
 <td><img src="images/grids/small_data_NH_03_03.png" data-link="images/results/Fig_Collective/Collective_03_03.png"></td>
 <td><img src="images/grids/small_data_NH_03_04.png" data-link="images/results/Fig_Collective/Collective_03_04.png"></td>
 <td><img src="images/grids/small_data_NH_03_05.png" data-link="images/results/Fig_Collective/Collective_03_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_02_01.png" data-link="images/results/Fig_Collective/Collective_02_01.png"></td>
 <td><img src="images/grids/small_data_NH_02_02.png" data-link="images/results/Fig_Collective/Collective_02_02.png"></td>
 <td><img src="images/grids/small_data_NH_02_03.png" data-link="images/results/Fig_Collective/Collective_02_03.png"></td>
 <td><img src="images/grids/small_data_NH_02_04.png" data-link="images/results/Fig_Collective/Collective_02_04.png"></td>
 <td><img src="images/grids/small_data_NH_02_05.png" data-link="images/results/Fig_Collective/Collective_02_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_01_02.png" data-link="images/results/Fig_Collective/Collective_01_02.png"></td>
 <td><img src="images/grids/small_data_NH_01_03.png" data-link="images/results/Fig_Collective/Collective_01_03.png"></td>
 <td><img src="images/grids/small_data_NH_01_04.png" data-link="images/results/Fig_Collective/Collective_01_04.png"></td>
 <td><img src="images/grids/small_data_NH_01_05.png" data-link="images/results/Fig_Collective/Collective_01_05.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><img src="images/grids/small_data_NH_00_04.png" data-link="images/results/Fig_Collective/Collective_00_04.png"></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
-<td><spacer> </spacer></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 	</table>
 	<div class="overlay">
 		<img id="linked-image" src="">
 	</div>
-	<script>
-		var overlay = document.querySelector(".overlay");
-		var linkedImage = document.querySelector("#linked-image");
-		var images = document.querySelectorAll("img");
-		for (var i = 0; i < images.length; i++) {
-			images[i].addEventListener("click", function() {
-				linkedImage.src = this.dataset.link;
-				overlay.style.display = "block";
-			});
-		}
-		overlay.addEventListener("click", function() {
-			overlay.style.display = "none";
-		});
-	</script>
+	<script src = "script2.js"	></script>
 </body>
 </html>
