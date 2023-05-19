@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #slider {
+            width: 300px;
+            margin: 0 10px;
+        }
+        #cr {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="slider-container">
+        <button onclick="moveBackward()">decrease CRIR</button>
+        <input type="range" min="-17" max="-15" step="0.2" value="-17" id="slider" onchange="showcr()">
+        <button onclick="moveForward()">increase CRIR</button>
+    </div>
+    <div id="cr">
+        <img id="image" src="cr_-17.0.png">
+    </div>
+
+    <script>
+        function showcr() {
+            var sliderValue = parseFloat(document.getElementById('slider').value).toFixed(1);
+            var imageName = 'cr_' + sliderValue + '.png';
+            document.getElementById('image').src = imageName;
+        }
+
+        function moveForward() {
+            var currentValue = parseFloat(document.getElementById('slider').value);
+            var newValue = Math.min(currentValue + 0.2, -15);
+            document.getElementById('slider').value = newValue;
+            showcr();
+        }
+
+        function moveBackward() {
+            var currentValue = parseFloat(document.getElementById('slider').value);
+            var newValue = Math.max(currentValue - 0.2, -17);
+            document.getElementById('slider').value = newValue;
+            showcr();
+        }
+    </script>
+
+</body>
+</html>
