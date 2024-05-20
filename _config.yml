@@ -108,10 +108,10 @@ analytics:
 # Site Author
 author:
   name             : "Xue-Jian Jiang"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "Just another astronomer."
-  location         : "Hilo, Hawaii"
-  email            :
+  location         : "Hangzhou, China"
+  email            : "xuejian.astro -at~ gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -128,6 +128,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Jiangxuejian"
+    - label: "PDFchem"
+      icon: "fab fa-fw fa-github"
+      url: "https://jiangxuejian.github.io/PDFchem"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
