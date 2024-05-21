@@ -1,8 +1,8 @@
-# PDFchem example:
+# PDFchem 
 
-## Orion A (Jiang et al. 2024 submitted)
+## Example: Orion A 
 
-The processed results of Orion A are better illustrated on web pages instead of a journal PDF. On the below we show two kinds of PDFchem results. 
+The processed results of Orion A are better illustrated on web pages instead of a journal PDF **(Jiang et al. 2024 submitted)**. On the below we show two kinds of PDFchem results. 
 
 ### [Collective Figures](https://jiangxuejian.github.io/PDFchem/collective.html)
 
