@@ -49,27 +49,10 @@
             overflow: auto;
         }
         .slider-container {
-            /* margin-top: 30px; */
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             margin-left: 50px;
             margin-right: 50px;
         }
-        .slider-wrapper {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        /* .slider-wrapper span.min {
-            position: absolute;
-            left: 5;
-        } */
-
-        /* .slider-wrapper span.max {
-            position: absolute;
-            right: -5;
-        } */
         .slider-label {
             margin-bottom: 10px;
             font-size: 1.1em;
@@ -118,23 +101,13 @@
     </div>
     <div class="main-content">
         <div class="left-container">
-            <div style="border:0; font-weight:bold;"> Use the slide bars to explore different parameter:</div>
-            <div><br></div>
             <div class="slider-container">
-                <div class="slider-label">log (UV):
-                <span id="sliderAValue" style="border:0; color:#f6931f; font-weight:bold;">0</span> [Draine]</div>
-                <div class="slider-wrapper">
-                    <span class="min">-1.0 </span>
-                    <div id="sliderA" class="slider"></div>
-                    <span class="max"> 5.0</span>
-                </div>
-                <div class="slider-label">log (CRIR):
-                <span id="sliderBValue" style="border:0; color:#f6931f; font-weight:bold;">-16 </span> [s^-1]</div>
-                <div class="slider-wrapper">
-                    <span class="min">-17</span>
-                    <div id="sliderB" class="slider"></div>
-                    <span class="max">-13</span>
-                </div>
+                <div class="slider-label">log (UV):</div>
+                <div id="sliderA" class="slider"></div>
+                <span id="sliderAValue">0</span>
+                <div class="slider-label">log (CRIR):</div>
+                <div id="sliderB" class="slider"></div>
+                <span id="sliderBValue">-16</span>
             </div>
             <div class="plot-container">
                 <div id="plot1" class="plot"></div>
@@ -180,7 +153,7 @@
                 var lguvValue = $("#sliderA").slider("value");
                 var lgcrValue = $("#sliderB").slider("value");
 
-                fetch('data.json')
+                fetch('3dpdr-data.json')
                     .then(response => response.json())
                     .then(data => {
                         var traces1 = [];
@@ -229,14 +202,14 @@
                                     x: x,
                                     y: y4,
                                     mode: 'lines',
-                                    name: 'C+'
+                                    name: 'CII'
                                 });
 
                                 traces3.push({
                                     x: x,
                                     y: y5,
                                     mode: 'lines',
-                                    name: 'C'
+                                    name: 'CI'
                                 });
 
                                 traces3.push({
@@ -247,7 +220,7 @@
                                 });
 
                                 // Prepare data for the table
-                                tableHeader = ["Av", "Tgas", "HI", "H2", "C+", "C", "CO"];
+                                tableHeader = ["Av", "Tgas", "HI", "H2", "CII", "CI", "CO"];
                                 var rows = item.species.map(row => row);
                                 var table = [{
                                     type: 'table',
@@ -271,25 +244,24 @@
 
                         var layout1 = {
                             title: 'Tgas',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true,   hoverformat: '.2f'                       },
-                            yaxis: { title: 'Tgas', type: 'log', showgrid: true, range: [0.8, 4.2], hoverformat: '.1e', },
+                            xaxis: { title: 'Av', type: 'log', showgrid: true },
+                            yaxis: { title: 'Tgas', type: 'log', showgrid: true, range: [0.8, 4.2] },
                             margin: { t: 40, b: 40, l: 50, r: 10 },
-                            autosize: true,
-                            showlegend: true,
+                            autosize: true
                         };
 
                         var layout2 = {
                             title: 'HI/H2',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true ,   hoverformat: '.2f' },
-                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, range: [-11, 0.2], hoverformat: '.1e',},
+                            xaxis: { title: 'Av', type: 'log', showgrid: true },
+                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, range: [-11, 0.2]},
                             margin: { t: 40, b: 40, l: 50, r: 10 },
                             autosize: true
                         };
 
                         var layout3 = {
                             title: 'Carbon Cycle',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true,   hoverformat: '.2f'  },
-                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, autorange: false, range: [-12, -3], hoverformat: '.1e',},
+                            xaxis: { title: 'Av', type: 'log', showgrid: true },
+                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, autorange: false, range: [-12, -3]},
                             margin: { t: 40, b: 40, l: 50, r: 10 },
                             autosize: true
                         };
@@ -313,7 +285,7 @@
 
             // Download table data
             $("#downloadButton").on("click", function() {
-                fetch('3dpdr-data.json')
+                fetch('data.json')
                     .then(response => response.json())
                     .then(data => {
                         var lguvValue = $("#sliderA").slider("value");
