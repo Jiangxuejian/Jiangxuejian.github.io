@@ -36,14 +36,14 @@
             height: calc(100vh - 120px); /* Adjust for header height */
         }
         .left-container {
-            width: 30%;
-            padding: 20px;
+            width: 40%;
+            padding: 8px;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .right-container {
-            width: 70%;
-            padding: 20px;
+            width: 60%;
+            padding: 8px;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             overflow: auto;
@@ -112,10 +112,10 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>3D-PDR Data Visualisation</h1>
-        <p>Visualize and explore data interactively with adjustable sliders. View and download the data table below.</p>
-    </div>
+    <!-- <div class="header"> -->
+        <!-- <h1>3D-PDR Data Visualisation</h1> -->
+        <!-- <p>Visualize and explore data interactively with adjustable sliders. View and download the data table below.</p> -->
+    <!-- </div> -->
     <div class="main-content">
         <div class="left-container">
             <div style="border:0; font-weight:bold;"> Use the slide bars to explore different parameter:</div>
@@ -180,7 +180,7 @@
                 var lguvValue = $("#sliderA").slider("value");
                 var lgcrValue = $("#sliderB").slider("value");
 
-                fetch('data.json')
+                fetch('3dpdr-data.json')
                     .then(response => response.json())
                     .then(data => {
                         var traces1 = [];
@@ -273,7 +273,7 @@
                             title: 'Tgas',
                             xaxis: { title: 'Av', type: 'log', showgrid: true,   hoverformat: '.2f'                       },
                             yaxis: { title: 'Tgas', type: 'log', showgrid: true, range: [0.8, 4.2], hoverformat: '.1e', },
-                            margin: { t: 40, b: 40, l: 50, r: 10 },
+                            margin: { t: 20, b: 20, l: 50, r: 10 },
                             autosize: true,
                             showlegend: true,
                         };
