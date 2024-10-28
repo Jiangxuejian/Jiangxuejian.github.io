@@ -1,352 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D-PDR Data Visualisation</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #119DFF;
-            color: white;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        .main-content {
-            display: flex;
-            height: calc(100vh - 120px); /* Adjust for header height */
-        }
-        .left-container {
-            width: 40%;
-            padding: 8px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .right-container {
-            width: 60%;
-            padding: 8px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            overflow: auto;
-        }
-        .slider-container {
-            /* margin-top: 30px; */
-            margin-bottom: 30px;
-            margin-left: 50px;
-            margin-right: 50px;
-        }
-        .slider-wrapper {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        /* .slider-wrapper span.min {
-            position: absolute;
-            left: 5;
-        } */
-
-        /* .slider-wrapper span.max {
-            position: absolute;
-            right: -5;
-        } */
-        .slider-label {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .slider {
-            width: 100%;
-        }
-        .plot {
-            width: 100%;
-            height: 300px;
-            margin-bottom: 20px;
-        }
-        .plot-container {
-            display: flex;
-            flex-direction: column;
-            height: 75%;
-            width: 100%;
-        }
-        #table {
-            width: 100%;
-            height: 800px;
-            margin-top: 20px;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .download-button {
-            padding: 10px 20px;
-            font-size: 1.1em;
-            color: white;
-            background-color: #119DFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .download-button:hover {
-            background-color: #0d8bf2;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+      }
+      .header .input-container {
+        text-align: center;
+      }
+      .header .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main-content {
+        display: flex;
+        height: calc(100vh - 94px);
+        gap: 4px;
+      }
+      .left-container {
+        width: 40%;
+        background: white;
+      }
+      .right-container {
+        width: 60%;
+        background: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        overflow: auto;
+      }
+      .slider-block {
+        display: flex;
+        gap: 16px;
+        margin: 4px auto;
+        flex: 1;
+      }
+      .slider-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 300px;
+      }
+      .slider-label {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        width: 200px;
+      }
+      .slider {
+        width: 100%;
+      }
+      .plot {
+        width: 100%;
+        height: 33%;
+      }
+      .plot-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+      .download-button {
+        padding: 8px;
+        color: white;
+        background-color: #119dff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .download-button:hover {
+        background-color: #0d8bf2;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <div class="header"> -->
-        <!-- <h1>3D-PDR Data Visualisation</h1> -->
-        <!-- <p>Visualize and explore data interactively with adjustable sliders. View and download the data table below.</p> -->
+    <!-- <h1>3D-PDR Data Visualisation</h1> -->
+    <!-- <p>Visualize and explore data interactively with adjustable sliders. View and download the data table below.</p> -->
     <!-- </div> -->
+
+    <div class="header">
+      <div class="input-container">
+        <div style="border: 0; font-weight: bold">
+          Use the slide bars to explore different parameter:
+        </div>
+        <div class="slider-container">
+          <div class="slider-block">
+            <div class="slider-label">
+              log (UV):
+              <span
+                id="sliderAValue"
+                style="border: 0; color: #f6931f; font-weight: bold"
+                >0</span
+              >
+              [Draine]
+            </div>
+            <div class="slider-wrapper">
+              <span class="min">-1.0 </span>
+              <div id="sliderA" class="slider"></div>
+              <span class="max"> 5.0</span>
+            </div>
+          </div>
+          <div class="slider-block">
+            <div class="slider-label">
+              log (CRIR):
+              <span
+                id="sliderBValue"
+                style="border: 0; color: #f6931f; font-weight: bold"
+                >-16
+              </span>
+              [s^-1]
+            </div>
+            <div class="slider-wrapper">
+              <span class="min">-17</span>
+              <div id="sliderB" class="slider"></div>
+              <span class="max">-13</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="download-button" id="downloadButton">
+          Download Table Data
+        </button>
+      </div>
+    </div>
     <div class="main-content">
-        <div class="left-container">
-            <div style="border:0; font-weight:bold;"> Use the slide bars to explore different parameter:</div>
-            <div><br></div>
-            <div class="slider-container">
-                <div class="slider-label">log (UV):
-                <span id="sliderAValue" style="border:0; color:#f6931f; font-weight:bold;">0</span> [Draine]</div>
-                <div class="slider-wrapper">
-                    <span class="min">-1.0 </span>
-                    <div id="sliderA" class="slider"></div>
-                    <span class="max"> 5.0</span>
-                </div>
-                <div class="slider-label">log (CRIR):
-                <span id="sliderBValue" style="border:0; color:#f6931f; font-weight:bold;">-16 </span> [s^-1]</div>
-                <div class="slider-wrapper">
-                    <span class="min">-17</span>
-                    <div id="sliderB" class="slider"></div>
-                    <span class="max">-13</span>
-                </div>
-            </div>
-            <div class="plot-container">
-                <div id="plot1" class="plot"></div>
-                <div id="plot2" class="plot"></div>
-                <div id="plot3" class="plot"></div>
-            </div>
+      <div class="left-container">
+        <div class="plot-container">
+          <div id="plot1" class="plot"></div>
+          <div id="plot2" class="plot"></div>
+          <div id="plot3" class="plot"></div>
         </div>
-        <div class="right-container">
-            <div id="table"></div>
-            <div class="button-container">
-                <button class="download-button" id="downloadButton">Download Table Data</button>
-            </div>
-        </div>
+      </div>
+      <div class="right-container">
+        <div id="table"></div>
+      </div>
     </div>
 
     <script>
-        $(function() {
-            // Initialize sliders
-            $("#sliderA").slider({
-                min: -1,
-                max: 5,
-                step: 1.0,
-                value: 0,
-                slide: function(event, ui) {
-                    $("#sliderAValue").text(ui.value);
-                    updatePlots();
-                }
-            });
-
-            $("#sliderB").slider({
-                min: -17,
-                max: -13,
-                step: 1.0,
-                value: -16,
-                slide: function(event, ui) {
-                    $("#sliderBValue").text(ui.value);
-                    updatePlots();
-                }
-            });
-
-            // Function to update plots and table based on slider values
-            function updatePlots() {
-                var lguvValue = $("#sliderA").slider("value");
-                var lgcrValue = $("#sliderB").slider("value");
-
-                fetch('3dpdr-data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        var traces1 = [];
-                        var traces2 = [];
-                        var traces3 = [];
-                        var tableData = [];
-                        var tableHeader = [];
-
-                        // Iterate over the data to find matching parameters
-                        Object.keys(data).forEach(key => {
-                            var item = data[key];
-                            var lguv = item.lguv;
-                            var lgcr = item.lgcr;
-
-                            if (Math.abs(lguv - lguvValue) < 0.1 && Math.abs(lgcr - lgcrValue) < 0.1) {
-                                var x = item.species.map(row => row[0]); // Av (column 1)
-                                var y1 = item.species.map(row => row[1]); // Tgas (column 2)
-                                var y2 = item.species.map(row => row[2]); // HI (column 3)
-                                var y3 = item.species.map(row => row[3]); // H2 (column 4)
-                                var y4 = item.species.map(row => row[4]); // CII (column 5)
-                                var y5 = item.species.map(row => row[5]); // CI (column 6)
-                                var y6 = item.species.map(row => row[6]); // CO (column 7)
-
-                                traces1.push({
-                                    x: x,
-                                    y: y1,
-                                    mode: 'lines',
-                                    name: 'Tgas'
-                                });
-
-                                traces2.push({
-                                    x: x,
-                                    y: y2,
-                                    mode: 'lines',
-                                    name: 'HI'
-                                });
-
-                                traces2.push({
-                                    x: x,
-                                    y: y3,
-                                    mode: 'lines',
-                                    name: 'H2'
-                                });
-
-                                traces3.push({
-                                    x: x,
-                                    y: y4,
-                                    mode: 'lines',
-                                    name: 'C+'
-                                });
-
-                                traces3.push({
-                                    x: x,
-                                    y: y5,
-                                    mode: 'lines',
-                                    name: 'C'
-                                });
-
-                                traces3.push({
-                                    x: x,
-                                    y: y6,
-                                    mode: 'lines',
-                                    name: 'CO'
-                                });
-
-                                // Prepare data for the table
-                                tableHeader = ["Av", "Tgas", "HI", "H2", "C+", "C", "CO"];
-                                var rows = item.species.map(row => row);
-                                var table = [{
-                                    type: 'table',
-                                    header: {
-                                        values: tableHeader.map(title => [title]),
-                                        align: 'center',
-                                        font: {size: 12, family: "Arial, sans-serif"},
-                                        fill: {color: "#119DFF"}
-                                    },
-                                    cells: {
-                                        values: tableHeader.map((_, i) => rows.map(row => row[i])),
-                                        align: 'center',
-                                        font: {size: 11, family: "Arial, sans-serif"},
-                                        fill: {color: "#F5F8FF"}
-                                    }
-                                }];
-
-                                Plotly.newPlot('table', table, {
-                                    height: $(".left-container").height() - 40,
-                                    margin: { t: 40, b: 0, l: 20, r: 20 },
-                                });
-                            }
-                        });
-
-                        var layout1 = {
-                            title: 'Tgas',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true,   hoverformat: '.2f'                       },
-                            yaxis: { title: 'Tgas', type: 'log', showgrid: true, range: [0.8, 4.2], hoverformat: '.1e', },
-                            margin: { t: 20, b: 20, l: 50, r: 10 },
-                            autosize: true,
-                            showlegend: true,
-                        };
-
-                        var layout2 = {
-                            title: 'HI/H2',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true ,   hoverformat: '.2f' },
-                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, range: [-11, 0.2], hoverformat: '.1e',},
-                            margin: { t: 40, b: 40, l: 50, r: 10 },
-                            autosize: true
-                        };
-
-                        var layout3 = {
-                            title: 'Carbon Cycle',
-                            xaxis: { title: 'Av', type: 'log', showgrid: true,   hoverformat: '.2f'  },
-                            yaxis: { title: 'Relative Abundance', type: 'log', showgrid: true, autorange: false, range: [-12, -3], hoverformat: '.1e',},
-                            margin: { t: 40, b: 40, l: 50, r: 10 },
-                            autosize: true
-                        };
-
-                        var updateLayout = (layout) => {
-                            layout.xaxis.tickmode = 'linear';
-                            layout.xaxis.tickvals = [1e-2, 1e-1, 1e0, 1e1, 1e2];
-                            layout.xaxis.ticktext = layout.xaxis.tickvals.map(d => `10<sup>${Math.log10(d)}</sup>`);
-                            layout.yaxis.tickmode = 'log';
-                            layout.yaxis.tickvals = [1e-11, 1e-10, 1e-9, 1e-8, 1e-7,1e-6,1e-5, 1e-4,1e-3, 1e-2, 1e-1, 1e0, 1e1, 1e2, 1e3, 1e4];
-                            // layout.yaxis.exponenformat = 'e';
-                            layout.yaxis.ticktext = layout.yaxis.tickvals.map(d => `10<sup>${Math.log10(d)}</sup>`);
-                            return layout;
-                        };
-
-                        Plotly.newPlot('plot1', traces1, updateLayout(layout1));
-                        Plotly.newPlot('plot2', traces2, updateLayout(layout2));
-                        Plotly.newPlot('plot3', traces3, updateLayout(layout3));
-                    });
-            }
-
-            // Download table data
-            $("#downloadButton").on("click", function() {
-                fetch('3dpdr-data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        var lguvValue = $("#sliderA").slider("value");
-                        var lgcrValue = $("#sliderB").slider("value");
-
-                        Object.keys(data).forEach(key => {
-                            var item = data[key];
-                            var lguv = item.lguv;
-                            var lgcr = item.lgcr;
-
-                            if (Math.abs(lguv - lguvValue) < 0.1 && Math.abs(lgcr - lgcrValue) < 0.1) {
-                                var rows = item.species;
-                                var csvContent = "data:text/csv;charset=utf-8,"
-                                    + ["Av", "Tgas", "HI", "H2", "CII", "CI", "CO"].join(",") + "\n"
-                                    + rows.map(row => row.join(",")).join("\n");
-
-                                var encodedUri = encodeURI(csvContent);
-                                var link = document.createElement("a");
-                                link.setAttribute("href", encodedUri);
-                                link.setAttribute("download", "data.csv");
-                                document.body.appendChild(link);
-                                link.click();
-                            }
-                        });
-                    });
-            });
-
-            // Initial plot and table
+      $(function () {
+        // Initialize sliders
+        $("#sliderA").slider({
+          min: -1,
+          max: 5,
+          step: 1.0,
+          value: 0,
+          slide: function (event, ui) {
+            $("#sliderAValue").text(ui.value);
             updatePlots();
+          },
         });
+
+        $("#sliderB").slider({
+          min: -17,
+          max: -13,
+          step: 1.0,
+          value: -16,
+          slide: function (event, ui) {
+            $("#sliderBValue").text(ui.value);
+            updatePlots();
+          },
+        });
+
+        // Function to update plots and table based on slider values
+        function updatePlots() {
+          var lguvValue = $("#sliderA").slider("value");
+          var lgcrValue = $("#sliderB").slider("value");
+
+          fetch("3dpdr-data.json")
+            .then((response) => response.json())
+            .then((data) => {
+              var traces1 = [];
+              var traces2 = [];
+              var traces3 = [];
+              var tableData = [];
+              var tableHeader = [];
+
+              // Iterate over the data to find matching parameters
+              Object.keys(data).forEach((key) => {
+                var item = data[key];
+                var lguv = item.lguv;
+                var lgcr = item.lgcr;
+
+                if (
+                  Math.abs(lguv - lguvValue) < 0.1 &&
+                  Math.abs(lgcr - lgcrValue) < 0.1
+                ) {
+                  var x = item.species.map((row) => row[0]); // Av (column 1)
+                  var y1 = item.species.map((row) => row[1]); // Tgas (column 2)
+                  var y2 = item.species.map((row) => row[2]); // HI (column 3)
+                  var y3 = item.species.map((row) => row[3]); // H2 (column 4)
+                  var y4 = item.species.map((row) => row[4]); // CII (column 5)
+                  var y5 = item.species.map((row) => row[5]); // CI (column 6)
+                  var y6 = item.species.map((row) => row[6]); // CO (column 7)
+
+                  traces1.push({
+                    x: x,
+                    y: y1,
+                    mode: "lines",
+                    name: "Tgas",
+                  });
+
+                  traces2.push({
+                    x: x,
+                    y: y2,
+                    mode: "lines",
+                    name: "HI",
+                  });
+
+                  traces2.push({
+                    x: x,
+                    y: y3,
+                    mode: "lines",
+                    name: "H2",
+                  });
+
+                  traces3.push({
+                    x: x,
+                    y: y4,
+                    mode: "lines",
+                    name: "C+",
+                  });
+
+                  traces3.push({
+                    x: x,
+                    y: y5,
+                    mode: "lines",
+                    name: "C",
+                  });
+
+                  traces3.push({
+                    x: x,
+                    y: y6,
+                    mode: "lines",
+                    name: "CO",
+                  });
+
+                  // Prepare data for the table
+                  tableHeader = ["Av", "Tgas", "HI", "H2", "C+", "C", "CO"];
+                  var rows = item.species.map((row) => row);
+                  var table = [
+                    {
+                      type: "table",
+                      header: {
+                        values: tableHeader.map((title) => [title]),
+                        align: "center",
+                        font: { size: 12, family: "Arial, sans-serif" },
+                        fill: { color: "#119DFF" },
+                      },
+                      cells: {
+                        values: tableHeader.map((_, i) =>
+                          rows.map((row) => row[i])
+                        ),
+                        align: "center",
+                        font: { size: 11, family: "Arial, sans-serif" },
+                        fill: { color: "#F5F8FF" },
+                      },
+                    },
+                  ];
+
+                  Plotly.newPlot("table", table, {
+                    height: $(".left-container").height() - 40,
+                    margin: { t: 40, b: 0, l: 20, r: 20 },
+                  });
+                }
+              });
+
+              var layout1 = {
+                title: "Tgas",
+                xaxis: {
+                  title: "Av",
+                  type: "log",
+                  showgrid: true,
+                  hoverformat: ".2f",
+                },
+                yaxis: {
+                  title: "Tgas",
+                  type: "log",
+                  showgrid: true,
+                  range: [0.8, 4.2],
+                  hoverformat: ".1e",
+                },
+                margin: { t: 40, b: 40, l: 50, r: 10 },
+                autosize: true,
+                showlegend: true,
+              };
+
+              var layout2 = {
+                title: "HI/H2",
+                xaxis: {
+                  title: "Av",
+                  type: "log",
+                  showgrid: true,
+                  hoverformat: ".2f",
+                },
+                yaxis: {
+                  title: "Relative Abundance",
+                  type: "log",
+                  showgrid: true,
+                  range: [-11, 0.2],
+                  hoverformat: ".1e",
+                },
+                margin: { t: 40, b: 40, l: 50, r: 10 },
+                autosize: true,
+              };
+
+              var layout3 = {
+                title: "Carbon Cycle",
+                xaxis: {
+                  title: "Av",
+                  type: "log",
+                  showgrid: true,
+                  hoverformat: ".2f",
+                },
+                yaxis: {
+                  title: "Relative Abundance",
+                  type: "log",
+                  showgrid: true,
+                  autorange: false,
+                  range: [-12, -3],
+                  hoverformat: ".1e",
+                },
+                margin: { t: 40, b: 40, l: 50, r: 10 },
+                autosize: true,
+              };
+
+              var updateLayout = (layout) => {
+                layout.xaxis.tickmode = "linear";
+                layout.xaxis.tickvals = [1e-2, 1e-1, 1, 1e1, 1e2];
+                layout.xaxis.ticktext = layout.xaxis.tickvals.map(
+                  (d) => `10<sup>${Math.log10(d)}</sup>`
+                );
+                layout.yaxis.tickmode = "log";
+                layout.yaxis.tickvals = [
+                  1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2,
+                  1e-1, 1, 1e1, 1e2, 1e3, 1e4,
+                ];
+                // layout.yaxis.exponenformat = 'e';
+                layout.yaxis.ticktext = layout.yaxis.tickvals.map(
+                  (d) => `10<sup>${Math.log10(d)}</sup>`
+                );
+                return layout;
+              };
+
+              Plotly.newPlot("plot1", traces1, updateLayout(layout1));
+              Plotly.newPlot("plot2", traces2, updateLayout(layout2));
+              Plotly.newPlot("plot3", traces3, updateLayout(layout3));
+            });
+        }
+
+        // Download table data
+        $("#downloadButton").on("click", function () {
+          fetch("3dpdr-data.json")
+            .then((response) => response.json())
+            .then((data) => {
+              var lguvValue = $("#sliderA").slider("value");
+              var lgcrValue = $("#sliderB").slider("value");
+
+              Object.keys(data).forEach((key) => {
+                var item = data[key];
+                var lguv = item.lguv;
+                var lgcr = item.lgcr;
+
+                if (
+                  Math.abs(lguv - lguvValue) < 0.1 &&
+                  Math.abs(lgcr - lgcrValue) < 0.1
+                ) {
+                  var rows = item.species;
+                  var csvContent =
+                    "data:text/csv;charset=utf-8," +
+                    ["Av", "Tgas", "HI", "H2", "CII", "CI", "CO"].join(",") +
+                    "\n" +
+                    rows.map((row) => row.join(",")).join("\n");
+
+                  var encodedUri = encodeURI(csvContent);
+                  var link = document.createElement("a");
+                  link.setAttribute("href", encodedUri);
+                  link.setAttribute("download", "data.csv");
+                  document.body.appendChild(link);
+                  link.click();
+                }
+              });
+            });
+        });
+
+        // Initial plot and table
+        updatePlots();
+      });
     </script>
-</body>
+  </body>
 </html>
