@@ -7,8 +7,7 @@
   my ORCID: [http://orcid.org/0000-0002-8899-4673](http://orcid.org/0000-0002-8899-4673) 
 
 1. *HC3N observations of nearby galaxies*
-
-  **Jiang, Xue-Jian**; Wang, Jun-Zhi; Gao, Yu; Gu, Qiu-Sheng, 2017 A&A.600.15J
+    **Jiang, Xue-Jian**; Wang, Jun-Zhi; Gao, Yu; Gu, Qiu-Sheng, 2017 A&A.600.15J
 
    ADS: http://adsabs.harvard.edu/abs/2017A&A...600A..15J 
    arXiv: [https://arxiv.org/abs/1701.00312](https://arxiv.org/abs/1701.00312)
